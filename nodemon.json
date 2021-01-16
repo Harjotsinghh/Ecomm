@@ -1,0 +1,7 @@
+{
+    "env":{
+        "MONGO_USER":"harjot",
+        "MONGO_PASSWORD":"mRVCNJnP1kizCKU1",
+        "MONGO_DATABASE":"ecomm"
+    }
+}

@@ -1,0 +1,38 @@
+.main-error{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.main-error_items{
+    margin: auto;
+    width: 70%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.main-error_items svg{
+    width: 35%;
+    height: 50%;
+    margin: auto;
+}
+.main-error_items h1{
+    display: inline-block;
+    height: 20%;
+    margin: auto;
+    text-align: center;
+    color: red;
+    text-transform: capitalize;
+}
+@media (max-width: 45rem){
+    .main-error_items{
+        width: 98%;
+        flex-direction: column;
+    }
+    .main-error_items h1{
+        font-size: 1.5rem;
+        text-decoration: overline;
+        
+    }
+}

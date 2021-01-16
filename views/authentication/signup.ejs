@@ -1,0 +1,45 @@
+<%- include('../includes/top.ejs') %>
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="/forms.css">
+</head>
+<body>
+<%- include('../includes/nav.ejs') %>
+
+<div class="form-background"> 
+    <div class="form-control">
+        <% if(error.length >0) {%>
+        <h2 style=" align-self: center; text-align: center; background-color: red;
+        color: white; 
+        font-weight: normal;
+        font-size: medium;
+        margin: 1rem;
+        width: 85%;
+        border: 1px solid black;"> <%= error[0] %> </h2>
+       <% } %>
+        <h1>SignUp </h1>
+        <form  class="form-body" action="/signup" method="POST" novalidate>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="<% if(prev) {%><%=prev.name%><%}%>">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email1" value="<% if(prev) {%><%=prev.email%><%}%>">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="<% if(prev) {%><%=prev.password%><%}%>">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" id="password2" value="<% if(prev) {%><%=prev.confirmPassword%><%}%>">
+            <div class="form-body__button">
+                <button class="btn" type="submit">SignUp</button>
+            </div>
+            </form>
+            <div class="form-control__new">
+                <span class="form-control-link">Alerady have an account? <a href="/login">Login</a></span>
+            </div>
+    
+    </div>
+    <%- include('../includes/footer.ejs') %>
+</div>
+
+
+
+
+<%- include('../includes/bottom.ejs') %>

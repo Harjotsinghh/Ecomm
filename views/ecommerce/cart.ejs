@@ -1,0 +1,56 @@
+<%- include('../includes/top.ejs') %>
+<link rel="stylesheet" href="/shared.css">
+<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="/cart.css">
+
+<%- include('../includes/nav.ejs') %>
+
+<div class="main_cart">
+    <% if(cart.length > 0) { %> 
+   <div class="main_cart-items">
+       
+       <% cart.forEach(item=>{ %>
+       <div class="main_cart-item">
+           <div class="main_cart-item_name">
+            <h3><%= item.productId.title%> (<%= item.quantity %>) </h3>
+           </div>
+            <div class="main_cart-item_price">
+                <h2> Rs. <%= item.productId.price %></h2>
+            </div>
+
+            
+                <form class="main_cart-item_delete" action="/delete" method="POST">
+                    <input type="hidden" name="productId" value="<%=item.productId._id%>">
+                    <button  type="submit"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 27.965 27.965" style="enable-background:new 0 0 27.965 27.965;" xml:space="preserve">
+                   <g>
+                       <g id="c142_x">
+                           <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982
+                               C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78
+                               l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782
+                               c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"/>
+                       </g>
+                       <g id="Capa_1_104_">
+                       </g>
+                   </g>
+                   
+                   </svg></button>
+
+                </form>
+                
+           
+           
+       </div>
+       <%})%>
+      
+       <% if(total_price != 0) { %>
+       <h2 style="padding: 5px; margin: auto;">Total Price: Rs <span style="color: red; padding: 4px;"><%= total_price%></span></h2>
+       <% } %>
+   </div>
+   <% } else { %>
+    <h1 style="align-self: center;"> Your Cart is Empty!!</h1>
+    <% } %> 
+   <%- include('../includes/footer.ejs') %>
+</div>
+
+<%- include('../includes/bottom.ejs') %>

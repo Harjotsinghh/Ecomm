@@ -1,0 +1,43 @@
+<%- include('../includes/top.ejs') %>
+
+<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="/forms.css">
+<link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+<%- include('../includes/nav.ejs') %>
+
+
+<div class="form-background">
+    <div class="form-control">
+        <% if(error.length >0) {%>
+            <h2 style=" text-align: center; background-color: red;
+             color: white; 
+             font-weight: normal;
+             font-size: medium;
+             border-radius: 3px;
+             margin: 0 2px;
+             border: 1px solid black;"> <%= error[0] %> </h2>
+            <% } %>
+        <h1>LOGIN </h1>
+        <form  class="form-body" action="/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email1" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <div class="form-body__button">
+                <button class="" type="submit">Login</button>
+            </div>
+            
+        </form>
+        <div class="form-control__new">
+            <span class="form-control-link">New User <a href="/signup">SignUp</a></span>
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+</div>
+
+
+
+
+<%- include('../includes/bottom.ejs') %>
