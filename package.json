@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "ecommerce website using nodejs",
   "main": "app.js",
+  "engines":{
+    "node": "15.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=Production MONGO_USER=harjot  MONGO_PASSWORD=mRVCNJnP1kizCKU1 MONGO_DATABASE=ecomm node app.js",
