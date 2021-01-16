@@ -21,7 +21,8 @@ exports.getSignup = async (req,res,next)=>{
     {
         isAuthenticated: req.session.isAuthenticated,
         user: req.session.user,
-        error: errors
+        error: errors,
+        prev: null
     });
 }
 
