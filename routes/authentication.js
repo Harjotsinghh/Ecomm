@@ -15,8 +15,9 @@ check('email','Please enter a valid Email')
     .isEmail(),
 check('confirmPassword','Passwords Do not match')
     .custom((value,{req})=>{
-        if(req.body.password!=value)
+        if(req.body.password.trim().toString()!== value.trim().toString())
           throw new Error('Passwords Do not match');
+        return true;
     })
 ,authControllers.postSignup);
 

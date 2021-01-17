@@ -1,7 +1,8 @@
-{
+{"nodemonConfig":{
     "env":{
         "MONGO_USER":"harjot",
-        "MONGO_PASSWORD":"mRVCNJnP1kizCKU1",
+        "MONGO_PASSWORD":"JD4CN2vk6ZAYXsK",
         "MONGO_DATABASE":"ecomm"
     }
+}
 }

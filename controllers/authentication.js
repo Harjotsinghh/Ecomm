@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const {validationResult}=require('express-validator');
-const { ContactlessOutlined } = require('@material-ui/icons');
+const { ContactlessOutlined, ArrowRightSharp } = require('@material-ui/icons');
 
 exports.getLogin = async (req,res, next)=>{
 
@@ -53,7 +53,7 @@ exports.postLogin = async (req,res,next)=>{
 }
 exports.postSignup =  async (req,res,next)=>{
     const errors= validationResult(req).array();
-    if(errors){
+    if(errors.length>0){
         const email=req.body.email;
         const name= req.body.name;
         const password=req.body.password;
